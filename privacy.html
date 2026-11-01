@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confidentialité GlassBoard</title>
+<meta name="description" content="Politique de confidentialité de GlassBoard : données lues, usage, stockage et suppression.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Manrope:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+<main>
+  <nav><a href="index.html">GlassBoard</a><strong>Politique de confidentialité</strong></nav>
+
+  <h1>Politique de confidentialité</h1>
+  <p class="meta">En vigueur au 1er novembre 2026. Éditeur et contact : <code>antoinepblanc@gmail.com</code></p>
+
+  <section class="card">
+    <h2>En bref</h2>
+    <p>GlassBoard est une application de bureau qui fonctionne sur l'ordinateur de son utilisateur. Elle lit certaines données de son compte Google pour les afficher, uniquement en lecture. L'éditeur n'exploite aucun serveur, ne collecte, ne stocke, ne vend et ne partage aucune donnée.</p>
+  </section>
+
+  <section class="card">
+    <h2>Données Google lues</h2>
+    <p>Avec l'accord explicite de l'utilisateur, donné sur l'écran de connexion Google, GlassBoard demande les autorisations suivantes, toutes en lecture seule :</p>
+    <ul>
+      <li><code>gmail.readonly</code> : nombre de conversations non lues, objet, expéditeur, date et extrait des conversations récentes, et le texte d'une conversation lorsque l'utilisateur pose une question à son sujet.</li>
+      <li><code>calendar.readonly</code> : titre, date, heure et lieu des événements à venir de l'agenda principal.</li>
+      <li><code>drive.metadata.readonly</code> : nom, type et date de modification des fichiers récents. Le contenu des fichiers n'est jamais lu.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Utilisation</h2>
+    <p>Ces données servent uniquement à afficher le tableau de bord de l'utilisateur et à répondre à ses propres questions. Elles ne sont pas utilisées à des fins publicitaires, ne sont pas revendues, et ne servent pas à entraîner des modèles d'intelligence artificielle généralistes.</p>
+    <p>Lorsque l'utilisateur pose une question à l'assistant intégré, les informations affichées dans le tableau de bord sont transmises, depuis son ordinateur, au service Claude d'Anthropic via son propre compte Claude, uniquement pour produire la réponse. Ce transfert est déclenché par l'utilisateur et régi par les conditions d'Anthropic entre l'utilisateur et Anthropic.</p>
+  </section>
+
+  <section class="card">
+    <h2>Stockage et sécurité</h2>
+    <ul>
+      <li>Le jeton d'accès Google est chiffré avec le trousseau macOS et reste sur l'ordinateur de l'utilisateur.</li>
+      <li>Une copie des dernières données affichées est gardée localement pour un affichage immédiat au démarrage. Elle se trouve dans un dossier local de l'utilisateur et n'en sort pas.</li>
+      <li>Aucune donnée n'est envoyée à l'éditeur ni à un tiers, hormis Google (pour lire les données) et Anthropic (à la demande de l'utilisateur, comme décrit ci-dessus).</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Conformité aux règles de Google</h2>
+    <p>L'utilisation et le transfert des informations reçues des API Google par GlassBoard respectent les <a href="https://developers.google.com/terms/api-services-user-data-policy">règles relatives aux données utilisateur des services d'API Google</a>, y compris les exigences d'utilisation limitée (Limited Use).</p>
+  </section>
+
+  <section class="card">
+    <h2>Révoquer l'accès et supprimer les données</h2>
+    <ul>
+      <li>Dans GlassBoard, onglet Réglages, le bouton « Déconnecter » supprime le jeton Google de l'ordinateur.</li>
+      <li>L'accès peut aussi être retiré à tout moment depuis <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+      <li>Supprimer l'application et son dossier de données efface toutes les informations conservées localement.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Modifications et contact</h2>
+    <p>Toute modification de cette politique sera publiée sur cette page, avec sa nouvelle date d'entrée en vigueur. Pour toute question : <code>antoinepblanc@gmail.com</code></p>
+  </section>
+
+  <footer><a href="index.html">Retour à l'accueil</a></footer>
+</main>
+</body>
+</html>
