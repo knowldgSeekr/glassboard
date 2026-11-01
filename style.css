@@ -25,3 +25,4 @@ ul { padding-left: 20px; }
 code { font: .85em ui-monospace, Menlo, monospace; padding: 1px 5px; border-radius: 6px; background: var(--glass); border: 1px solid var(--edge); overflow-wrap: anywhere; }
 .meta { font-size: .85rem; color: var(--muted); }
 footer { font-size: .85rem; color: var(--muted); }
+[hidden] { display: none !important; }

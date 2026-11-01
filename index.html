@@ -15,6 +15,13 @@
 <main>
   <nav><strong>GlassBoard</strong><a href="privacy.html">Politique de confidentialité</a><a href="terms.html">Conditions d'utilisation</a></nav>
 
+  <section class="card" id="authcode" hidden>
+    <h2>Autorisation bancaire reçue</h2>
+    <p>Copie ce code et colle-le dans GlassBoard, onglet Banque :</p>
+    <p><code id="code">—</code> <button id="copy" type="button" style="font: inherit; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--edge); background: var(--glass); color: inherit; cursor: pointer">Copier</button></p>
+    <p class="meta">Code à usage unique, valable quelques minutes. Il n'est enregistré nulle part.</p>
+  </section>
+
   <h1>Ta journée, sur une seule vitre.</h1>
   <p class="lead">GlassBoard est une application de bureau personnelle pour macOS. Elle réunit dans une fenêtre tes mails, ton agenda, tes fichiers récents, tes invitations à signer, la météo et l'état de tes projets de code.</p>
 
@@ -43,5 +50,15 @@
 
   <footer>GlassBoard est une application personnelle, non commerciale, distribuée hors App Store.</footer>
 </main>
+<script>
+  const q = new URLSearchParams(location.search);
+  if (q.get('code') || q.get('error')) {
+    const box = document.getElementById('authcode'); box.hidden = false;
+    if (q.get('error')) box.querySelector('p').textContent = 'La banque a refusé : ' + (q.get('error_description') || q.get('error')) + '. Relance la connexion depuis GlassBoard.';
+    document.getElementById('code').textContent = q.get('code') || '—';
+    document.getElementById('copy').addEventListener('click', (e) => navigator.clipboard.writeText(q.get('code') || '').then(() => (e.target.textContent = 'Copié')));
+    history.replaceState(null, '', location.pathname);
+  }
+</script>
 </body>
 </html>
