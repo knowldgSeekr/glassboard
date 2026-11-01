@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retour GlassBoard</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Manrope:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+<main>
+  <nav><a href="index.html">GlassBoard</a></nav>
+  <h1 id="title">Autorisation reçue</h1>
+  <section class="card">
+    <p id="msg">Copie ce code et colle-le dans GlassBoard, onglet Banque :</p>
+    <p><code id="code">—</code></p>
+    <p><button id="copy" type="button" style="font: inherit; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--edge); background: var(--glass); color: inherit; cursor: pointer">Copier le code</button></p>
+    <p class="meta">Ce code ne sert qu'une fois et expire au bout de quelques minutes. Il n'est enregistré nulle part sur cette page.</p>
+  </section>
+</main>
+<script>
+  const q = new URLSearchParams(location.search);
+  const code = q.get('code'), err = q.get('error');
+  if (err) {
+    document.getElementById('title').textContent = 'Autorisation refusée';
+    document.getElementById('msg').textContent = 'La banque a renvoyé : ' + (q.get('error_description') || err) + '. Relance la connexion depuis GlassBoard.';
+    document.getElementById('copy').hidden = true;
+  } else if (code) {
+    document.getElementById('code').textContent = code;
+  } else {
+    document.getElementById('msg').textContent = 'Aucun code reçu. Cette page s’ouvre automatiquement après l’autorisation donnée à ta banque.';
+    document.getElementById('copy').hidden = true;
+  }
+  document.getElementById('copy').addEventListener('click', (e) => navigator.clipboard.writeText(code || '').then(() => (e.target.textContent = 'Copié')));
+  history.replaceState(null, '', location.pathname); // retire le code de l'adresse affichée
+</script>
+</body>
+</html>
