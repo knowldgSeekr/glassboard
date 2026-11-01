@@ -16,19 +16,20 @@
   <nav><a href="index.html">GlassBoard</a><strong>Politique de confidentialité</strong><a href="terms.html">Conditions d'utilisation</a></nav>
 
   <h1>Politique de confidentialité</h1>
-  <p class="meta">En vigueur au 1er novembre 2026. Éditeur et contact : <code>antoinepblanc@gmail.com</code></p>
+  <p class="meta">En vigueur au 2 novembre 2026. Éditeur et contact : <code>antoinepblanc@gmail.com</code></p>
 
   <section class="card">
     <h2>En bref</h2>
-    <p>GlassBoard est une application de bureau qui fonctionne sur l'ordinateur de son utilisateur. Elle lit certaines données de son compte Google pour les afficher, uniquement en lecture. L'éditeur n'exploite aucun serveur, ne collecte, ne stocke, ne vend et ne partage aucune donnée.</p>
+    <p>GlassBoard est une application de bureau qui fonctionne sur l'ordinateur de son utilisateur. Elle lit certaines données de son compte Google pour les afficher et, uniquement à la demande explicite de l'utilisateur, envoie ses réponses aux mails et ajoute des événements à son agenda. L'éditeur n'exploite aucun serveur, ne collecte, ne stocke, ne vend et ne partage aucune donnée.</p>
   </section>
 
   <section class="card">
-    <h2>Données Google lues</h2>
-    <p>Avec l'accord explicite de l'utilisateur, donné sur l'écran de connexion Google, GlassBoard demande les autorisations suivantes, toutes en lecture seule :</p>
+    <h2>Données Google utilisées</h2>
+    <p>Avec l'accord explicite de l'utilisateur, donné sur l'écran de connexion Google, GlassBoard demande les autorisations suivantes :</p>
     <ul>
       <li><code>gmail.readonly</code> : nombre de conversations non lues, objet, expéditeur, date et extrait des conversations récentes, et le texte d'une conversation lorsque l'utilisateur pose une question à son sujet.</li>
-      <li><code>calendar.readonly</code> : titre, date, heure et lieu des événements à venir de l'agenda principal.</li>
+      <li><code>gmail.send</code> : envoi d'une réponse rédigée par l'utilisateur, uniquement quand il clique sur « Envoyer » et confirme l'envoi. GlassBoard n'envoie jamais de mail de lui-même.</li>
+      <li><code>calendar.events</code> : lecture des événements de l'agenda principal (titre, date, heure, lieu, description) et ajout d'un événement quand l'utilisateur le crée ou confirme une proposition. GlassBoard ne modifie ni ne supprime aucun événement existant.</li>
       <li><code>drive.metadata.readonly</code> : nom, type et date de modification des fichiers récents. Le contenu des fichiers n'est jamais lu.</li>
     </ul>
   </section>
@@ -51,15 +52,16 @@
 
   <section class="card">
     <h2>Utilisation</h2>
-    <p>Les données décrites sur cette page servent uniquement à afficher le tableau de bord de l'utilisateur et à répondre à ses propres questions. Elles ne sont pas utilisées à des fins publicitaires, ne sont pas revendues, et ne servent pas à entraîner des modèles d'intelligence artificielle généralistes.</p>
+    <p>Les données décrites sur cette page servent uniquement à afficher le tableau de bord de l'utilisateur et à répondre à ses propres questions. Lorsque l'utilisateur demande à l'assistant de rédiger une réponse, le fil concerné est transmis à Claude pour produire un brouillon que l'utilisateur relit avant tout envoi. Elles ne sont pas utilisées à des fins publicitaires, ne sont pas revendues, et ne servent pas à entraîner des modèles d'intelligence artificielle généralistes.</p>
     <p>Lorsque l'utilisateur pose une question à l'assistant intégré, les informations affichées dans le tableau de bord (hors données bancaires et boîtes mail non autorisées par l'utilisateur) sont transmises, depuis son ordinateur, au service Claude d'Anthropic via son propre compte Claude, uniquement pour produire la réponse. Ce transfert est déclenché par l'utilisateur et régi par les conditions d'Anthropic entre l'utilisateur et Anthropic.</p>
   </section>
 
   <section class="card">
     <h2>Stockage et sécurité</h2>
     <ul>
+      <li>L'ouverture de l'application exige Touch ID ou le mot de passe de la session macOS ; elle se reverrouille quand l'ordinateur se verrouille, se met en veille ou reste inactif.</li>
       <li>Le jeton d'accès Google est chiffré avec le trousseau macOS et reste sur l'ordinateur de l'utilisateur.</li>
-      <li>Une copie des dernières données affichées est gardée localement pour un affichage immédiat au démarrage. Elle se trouve dans un dossier local de l'utilisateur et n'en sort pas.</li>
+      <li>Une copie des dernières données affichées est gardée localement, chiffrée par le trousseau macOS, pour un affichage immédiat au démarrage. Elle n'en sort pas.</li>
       <li>Aucune donnée n'est envoyée à l'éditeur ni à un tiers, hormis les services qui fournissent les données (Google, Enable Banking et les banques, fournisseurs de messagerie) et Anthropic (à la demande de l'utilisateur, comme décrit ci-dessus).</li>
     </ul>
   </section>
